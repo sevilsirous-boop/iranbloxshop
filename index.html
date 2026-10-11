@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ایران‌بلاکس | فروشگاه روباکس</title>
+<style>
+:root { color-scheme: light dark; --bg: light-dark(#f7f5ff,#0c0a14); --surface: light-dark(#ffffff,#171321); --surface2: light-dark(#f0eaff,#211831); --text: light-dark(#211733,#f7f1ff); --muted: light-dark(#6f667f,#b9aecb); --line: light-dark(#e4dced,#332844); --accent:#a855f7; --accent2:#7c3aed; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: Tahoma, Arial, sans-serif; }
+#app { min-height:100vh; width:100%; background:var(--bg); }
+a { color:inherit; text-decoration:none; }
+.wrap { width:min(1120px, calc(100% - 32px)); margin:auto; }
+header { border-bottom:1px solid var(--line); background:var(--surface); }
+.nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+.brand { display:flex; align-items:center; gap:11px; font-weight:900; font-size:21px; }
+.logo { width:44px; height:44px; display:grid; place-items:center; border-radius:14px; color:white; font-size:21px; background:linear-gradient(140deg,#c084fc,#6d28d9); box-shadow:0 8px 24px #9333ea44; }
+.brand small { display:block; font-size:10px; color:var(--muted); font-weight:600; margin-top:4px; }
+.navlinks { display:flex; align-items:center; gap:20px; color:var(--muted); font-size:13px; }
+.btn { display:inline-flex; justify-content:center; align-items:center; border:0; border-radius:13px; padding:12px 17px; font:inherit; font-weight:800; cursor:pointer; transition:transform .15s, filter .15s; }
+.btn:hover { transform:translateY(-2px); filter:brightness(1.07); }
+.primary { background:linear-gradient(135deg,#c084fc,#7c3aed); color:#fff; }
+.secondary { background:var(--surface2); color:var(--text); border:1px solid var(--line); }
+.hero { padding:64px 0 42px; overflow:hidden; }
+.hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; }
+.eyebrow { display:inline-flex; gap:8px; align-items:center; background:var(--surface2); color:#c084fc; border:1px solid var(--line); padding:8px 12px; border-radius:999px; font-size:12px; font-weight:800; }
+h1 { font-size:clamp(32px,5vw,55px); line-height:1.3; margin:18px 0 14px; letter-spacing:-1.2px; }
+.gradient { background:linear-gradient(90deg,#d8b4fe,#9333ea); color:transparent; background-clip:text; }
+.lead { max-width:570px; color:var(--muted); line-height:2.1; font-size:15px; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+.hero-art { min-height:300px; position:relative; display:grid; place-items:center; border:1px solid var(--line); border-radius:30px; overflow:hidden; background:radial-gradient(circle at 50% 40%,#8b5cf633,transparent 50%),linear-gradient(145deg,var(--surface2),var(--surface)); }
+.orb { width:190px; height:190px; border-radius:40px; display:grid; place-items:center; transform:rotate(-8deg); background:linear-gradient(145deg,#c084fc,#6d28d9); box-shadow:0 24px 60px #7c3aed66; border:1px solid #ffffff55; }
+.orb span { color:white; font-size:82px; font-weight:1000; text-shadow:0 6px 0 #4c1d95; transform:rotate(8deg); }
+.float { position:absolute; border:1px solid var(--line); background:var(--surface); border-radius:15px; padding:12px 15px; font-size:12px; box-shadow:0 12px 35px #0002; }
+.float b { color:#c084fc; font-size:15px; display:block; margin-bottom:4px; }
+.f1 { top:28px; right:22px; } .f2 { bottom:27px; left:18px; } .f3 { bottom:35px; right:25px; }
+.trust { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:10px auto 55px; }
+.trust div { background:var(--surface); border:1px solid var(--line); border-radius:17px; padding:18px; display:flex; gap:12px; align-items:center; }
+.trust .emoji { font-size:24px; } .trust b { display:block; font-size:13px; margin-bottom:5px; } .trust small { color:var(--muted); font-size:11px; }
+section { padding:20px 0 54px; }
+.section-head { display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:22px; }
+h2 { margin:0 0 8px; font-size:26px; } .sub { color:var(--muted); font-size:13px; line-height:1.9; }
+.products { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.product { background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:20px; overflow:hidden; }
+.product-top { height:110px; display:grid; place-items:center; background:radial-gradient(circle,#a855f733,transparent 70%),var(--surface2); border-radius:16px; margin-bottom:17px; }
+.coin { width:72px; height:72px; border-radius:50%; display:grid; place-items:center; font-weight:1000; font-size:25px; color:#fff; background:linear-gradient(145deg,#e9d5ff,#9333ea); border:5px solid #c084fc; box-shadow:0 8px 22px #7c3aed44; }
+.product h3 { margin:0 0 8px; font-size:17px; }
+.product p { margin:0 0 17px; color:var(--muted); font-size:12px; line-height:1.9; }
+.price { display:flex; align-items:center; justify-content:space-between; gap:8px; border-top:1px solid var(--line); padding-top:15px; }
+.price strong { font-size:13px; } .price small { color:var(--muted); font-size:10px; }
+.price .btn { padding:10px 12px; font-size:12px; }
+.note { margin-top:17px; border:1px dashed #a855f766; border-radius:15px; padding:14px 16px; color:var(--muted); font-size:12px; line-height:2; }
+.how { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.step { border:1px solid var(--line); border-radius:18px; padding:20px; background:var(--surface); }
+.num { width:35px; height:35px; border-radius:11px; background:var(--surface2); display:grid; place-items:center; color:#c084fc; font-weight:900; margin-bottom:14px; }
+.step h3 { margin:0 0 8px; font-size:15px; } .step p { margin:0; color:var(--muted); font-size:12px; line-height:2; }
+.cta { margin:0 auto 55px; padding:28px; border-radius:24px; background:linear-gradient(120deg,#6d28d9,#a855f7); color:white; display:flex; justify-content:space-between; align-items:center; gap:18px; }
+.cta h2 { margin-bottom:8px; } .cta p { margin:0; color:#f3e8ff; font-size:13px; line-height:1.8; } .cta .btn { background:#fff; color:#6d28d9; flex-shrink:0; }
+footer { border-top:1px solid var(--line); padding:25px 0; color:var(--muted); font-size:11px; line-height:2; }
+.modal-backdrop { position:fixed; inset:0; background:#08040dcc; display:none; place-items:center; padding:20px; z-index:10; }
+.modal-backdrop.open { display:grid; }
+.modal { width:min(440px,100%); border-radius:22px; border:1px solid var(--line); background:var(--surface); padding:24px; box-shadow:0 25px 80px #0007; }
+.modal h3 { margin:0 0 12px; } .modal p { color:var(--muted); font-size:13px; line-height:2; } .modal .btn { width:100%; margin-top:8px; }
+@media(max-width:760px) { .navlinks { display:none; } .hero { padding-top:38px; } .hero-grid { grid-template-columns:1fr; } .hero-art { min-height:260px; } .trust { grid-template-columns:1fr; margin-bottom:35px; } .products { grid-template-columns:1fr; } .product { display:grid; grid-template-columns:100px 1fr; gap:0 14px; } .product-top { grid-row:span 3; height:100%; min-height:130px; margin:0; } .coin { width:58px;height:58px;font-size:20px; } .product h3 { margin-top:3px; } .price { grid-column:2; } .how { grid-template-columns:1fr; } .cta { align-items:flex-start; flex-direction:column; } .section-head { align-items:flex-start; flex-direction:column; } }
+</style>
+</head>
+<body>
+<div id="app">
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="logo">IB</span><span>ایران‌بلاکس<small>فروشگاه روباکس</small></span></a><nav class="navlinks"><a href="#products">محصولات</a><a href="#how">راهنمای خرید</a><a href="#support">پشتیبانی</a></nav><a class="btn primary" href="#products">مشاهده محصولات</a></div></header>
+<main>
+<div class="wrap hero" id="home"><div class="hero-grid"><div><span class="eyebrow">✦ دنیای روبلاکس، یک قدم نزدیک‌تر</span><h1>وقتشه تجربه‌ات رو<br><span class="gradient">ارتقا بدی!</span></h1><p class="lead">به ایران‌بلاکس خوش اومدی؛ جایی برای دیدن بسته‌های روباکس و ثبت سفارش ساده. محصولت رو انتخاب کن و برای اطلاع از قیمت و هماهنگی خرید با پشتیبانی در ارتباط باش.</p><div class="hero-actions"><a class="btn primary" href="#products">🛍️ دیدن بسته‌ها</a><a class="btn secondary" href="#how">چطور خرید کنم؟</a></div></div><div class="hero-art"><div class="orb"><span>R$</span></div><div class="float f1"><b>🎮 IRANBLOX</b>دنیای بازی تو</div><div class="float f2"><b>💜 روباکس</b>بسته موردنظرت رو انتخاب کن</div><div class="float f3">خرید با راهنمایی پشتیبانی</div></div></div></div>
+<div class="wrap trust"><div><span class="emoji">💬</span><span><b>پشتیبانی سفارش</b><small>راهنمایی پیش از خرید</small></span></div><div><span class="emoji">🧾</span><span><b>اطلاعات شفاف</b><small>قیمت و شرایط پیش از پرداخت</small></span></div><div><span class="emoji">🔒</span><span><b>امنیت حساب</b><small>رمز عبورت رو به کسی نده</small></span></div></div>
+<section class="wrap" id="products"><div class="section-head"><div><h2>بسته‌های روباکس</h2><div class="sub">بسته موردنظرت رو انتخاب کن؛ قیمت و روش تحویل رو از پشتیبانی بپرس.</div></div><span class="eyebrow">✨ فروشگاه ایران‌بلاکس</span></div><div class="products">
+<article class="product"><div class="product-top"><div class="coin">R$</div></div><h3>بسته شروع</h3><p>برای شروع خرید و انتخاب یک بسته کوچک‌تر.</p><div class="price"><span><strong>استعلام قیمت</strong><br><small>قیمت به‌روز از پشتیبانی</small></span><button class="btn primary order" data-product="بسته شروع">ثبت سفارش</button></div></article>
+<article class="product"><div class="product-top"><div class="coin">R$</div></div><h3>بسته محبوب</h3><p>یک گزینه پیشنهادی برای بازیکن‌های فعال.</p><div class="price"><span><strong>استعلام قیمت</strong><br><small>قیمت به‌روز از پشتیبانی</small></span><button class="btn primary order" data-product="بسته محبوب">ثبت سفارش</button></div></article>
+<article class="product"><div class="product-top"><div class="coin">R$</div></div><h3>بسته ویژه</h3><p>برای سفارش‌های بزرگ‌تر؛ جزئیات را هماهنگ کن.</p><div class="price"><span><strong>استعلام قیمت</strong><br><small>قیمت به‌روز از پشتیبانی</small></span><button class="btn primary order" data-product="بسته ویژه">ثبت سفارش</button></div></article>
+</div><div class="note">ℹ️ این نسخه نمایشی است؛ مقدار روباکس، قیمت‌های واقعی، روش تحویل و لینک تلگرام هنوز باید توسط صاحب فروشگاه وارد شوند. پیش از خرید، روش فروش را با قوانین جاری Roblox تطبیق بده.</div></section>
+<section class="wrap" id="how"><div class="section-head"><div><h2>خرید چطور انجام می‌شه؟</h2><div class="sub">سه قدم ساده برای شروع سفارش.</div></div></div><div class="how"><div class="step"><div class="num">۱</div><h3>بسته رو انتخاب کن</h3><p>از بخش محصولات، بسته‌ای رو که مدنظرت هست انتخاب کن.</p></div><div class="step"><div class="num">۲</div><h3>قیمت رو بپرس</h3><p>قیمت روز، شرایط تحویل و جزئیات سفارش رو با پشتیبانی هماهنگ کن.</p></div><div class="step"><div class="num">۳</div><h3>سفارش رو پیگیری کن</h3><p>جزئیات سفارش و زمان تحویل رو نگه دار و فقط از روش توافق‌شده استفاده کن.</p></div></div></section>
+<div class="wrap cta" id="support"><div><h2>سؤالی داری؟ 💜</h2><p>برای خرید یا راهنمایی، از کانال رسمی ایران‌بلاکس پیام بده.</p></div><a class="btn" href="https://t.me/iranbloxshop" target="_blank" rel="noopener noreferrer">ارتباط با پشتیبانی</a></div>
+</main><footer><div class="wrap"><b>ایران‌بلاکس · IRANBLOX</b><br>این پیش‌نمایش اولیه است و هنوز به درگاه پرداخت یا سامانه سفارش واقعی متصل نیست. © ایران‌بلاکس</div></footer>
+<div class="modal-backdrop" id="modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h3 id="modalTitle">ثبت سفارش ایران‌بلاکس</h3><p id="modalText">برای فعال شدن سفارش، لینک تلگرام یا راه ارتباطی رسمی فروشگاه باید اضافه بشه. این دکمه در حال حاضر فقط نمایشی است.</p><button class="btn primary" id="closeModal">متوجه شدم</button></div></div>
+</div>
+<script>
+const modal=document.getElementById('modal');
+function openModal(message){document.getElementById('modalText').textContent=message;modal.classList.add('open');}
+document.querySelectorAll('.order').forEach(button=>button.addEventListener('click',()=>{const product=button.dataset.product;window.open('https://t.me/iranbloxshop?text='+encodeURIComponent('سلام، برای سفارش '+product+' از فروشگاه ایران‌بلاکس پیام می‌دم.'),'_blank','noopener,noreferrer')}));
+document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));
+modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open')});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')modal.classList.remove('open')});
+</script>
+</body>
+</html>
